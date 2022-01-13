@@ -1,0 +1,13 @@
+actor Librarian
+participant LibrarianUI
+participant addNewBookView
+participant Controller
+participant Library
+Librarian->LibrarianUI:Library add new book
+LibrarianUI->addNewBookView:New UI of add new book
+addNewBookView->Controller:Book details
+Controller->Library:Add book
+activate Library
+Library-->Controller:Successfuly added new book
+deactivate Library
+Controller-->Librarian:Message box: "Added book"

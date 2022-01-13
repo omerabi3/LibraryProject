@@ -1,0 +1,14 @@
+actor Student
+participant StudentUI
+participant UserPersonalView
+participant Controller
+participant Library
+Student->StudentUI:View personal profile
+StudentUI->UserPersonalView:View personal profile
+UserPersonalView->Controller:Student personal profile
+Controller->Library:Get student profile
+activate Library
+Library-->Controller:Return student profile
+deactivate Library
+Controller-->UserPersonalView:Return student profile
+UserPersonalView-->Student:Show personal information
